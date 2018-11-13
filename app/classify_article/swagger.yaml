@@ -10,7 +10,7 @@ produces:
 paths:
   /predictions:
     post:
-      operationId: app.post_predictions
+      operationId: predict.post_predictions
       summary: Predicts categories of the given news articles
       parameters:
         - name: query

@@ -4,7 +4,7 @@ import connexion
 
 from sklearn.externals import joblib
 
-classifier = joblib.load('./classifier/model.pkl')
+classifier = joblib.load('../../output/model.pkl')
 
 
 def post_predictions(query):
@@ -16,8 +16,8 @@ def post_predictions(query):
     return predictions
 
 
-app = connexion.App(__name__)
-app.add_api('swagger.yaml')
+predict = connexion.App(__name__)
+predict.add_api('swagger.yaml')
 
 if __name__ == '__main__':
-    app.run(port=8080, server='gevent')
+    predict.run(port=8001, server='gevent')
